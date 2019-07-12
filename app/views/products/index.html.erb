@@ -1,1 +1,8 @@
 <h1>Products catalog</h1>
+<ul>
+  <% @products.each do |product| %>
+    <li>
+      <%= product.name %>
+    </li>
+  <% end %>
+</ul>
