@@ -1,0 +1,16 @@
+<h1 class="my-4">
+  <%= @product.name %>
+</h1>
+
+<div class="row">
+  <div class="col-md-8">
+    <%= image_tag @product.image, class: 'img-fluid' %>
+  </div>
+
+  <div class="col-md-4">
+    <h3 class="my-3">Project Description</h3>
+    <p>
+      <%= @product.description %>
+    </p>
+  </div>
+</div>

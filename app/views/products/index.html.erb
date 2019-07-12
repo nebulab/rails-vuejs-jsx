@@ -6,12 +6,12 @@
   <% @products.each do |product| %>
     <div class="col-lg-4 col-sm-6 mb-4">
       <div class="card h-100">
-        <%= link_to '#' do %>
+        <%= link_to product_path(product) do %>
           <%= image_tag product.image, class: 'card-img-top' %>
         <% end %>
         <div class="card-body">
           <h4 class="card-title">
-            <%= link_to '#' do %>
+            <%= link_to product_path(product) do %>
               <%= product.name %>
             <% end %>
           </h4>
