@@ -1,8 +1,25 @@
-<h1>Products catalog</h1>
-<ul>
+<h1 class="my-4">
+  Products catalog
+</h1>
+
+<div class="row">
   <% @products.each do |product| %>
-    <li>
-      <%= product.name %>
-    </li>
+    <div class="col-lg-4 col-sm-6 mb-4">
+      <div class="card h-100">
+        <%= link_to '#' do %>
+          <%= image_tag product.image, class: 'card-img-top' %>
+        <% end %>
+        <div class="card-body">
+          <h4 class="card-title">
+            <%= link_to '#' do %>
+              <%= product.name %>
+            <% end %>
+          </h4>
+          <p class="card-text">
+            <%= product.description.truncate(50) %>
+          </p>
+        </div>
+      </div>
+    </div>
   <% end %>
-</ul>
+<div>
