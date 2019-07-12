@@ -23,7 +23,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 # Frontend
-gem 'bootstrap'
 gem 'webpacker'
 
 # Utils
