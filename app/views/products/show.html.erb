@@ -1,6 +1,9 @@
 <h1 class="my-4">
   <%= @product.name %>
 </h1>
+<p>
+  <%= link_to t('products.back'), products_path %>
+</p>
 
 <div class="row">
   <div class="col-md-8">
@@ -15,4 +18,10 @@
   </div>
 </div>
 
-<%= render 'shared/comments', comments: @product.comments %>
+<%= render 'shared/comments', comments: @product.comments, product: @product %>
+
+<div class="row my-2">
+  <div class="col-md-8">
+    <%= render 'comments/form', product: @product, comment: @comment %>
+  </div>
+</div>

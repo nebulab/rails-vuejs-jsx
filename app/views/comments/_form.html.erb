@@ -1,0 +1,13 @@
+<h4 class="my-4">Add new comment</h4>
+
+<%= form_for [product, comment] do |form| %>
+  <div class="form-label-group">
+    <%= form.text_field :title, class: 'form-control', placeholder: t('comments.form.title'), required: true, autofocus: true %>
+  </div>
+
+  <div class="form-label-group my-3">
+    <%= form.text_area :description, class: 'form-control', placeholder: t('comments.form.description'), required: true  %>
+  </div>
+
+  <%= form.submit t('comments.form.submit'), class: 'btn btn-primary' %>
+<% end %>

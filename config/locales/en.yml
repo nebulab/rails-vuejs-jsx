@@ -1,3 +1,10 @@
 en:
+  products:
+    back: Back to the products list
   comments:
     empty: There aren't comments yet.
+    form:
+      title: Title
+      description: Description
+      submit: Add comment
+      delete: Delete comment
