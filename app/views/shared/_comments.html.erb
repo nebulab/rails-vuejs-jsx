@@ -1,0 +1,22 @@
+<h3 class="my-4">Comments</h3>
+
+<div class="row">
+  <% if comments.any? %>
+    <% comments.each do |comment| %>
+      <div class="col-md-12">
+        <h3>
+          <%= comment.title %>
+        </h3>
+        <p>
+          <%= comment.description %>
+        </p>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="col-md-12">
+      <p>
+        <%= t('comments.empty') %>
+      </p>
+    </div>
+  <% end %>
+</div>
