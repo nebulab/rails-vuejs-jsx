@@ -1,7 +1,8 @@
 /* eslint no-console:0 */
 
+import Turbolinks from 'turbolinks'
 import TurbolinksAdapter from 'vue-turbolinks'
-import Vue from 'vue/dist/vue.esm'
+import Vue from 'vue'
 
 // Import style
 import '../sass/index.scss'
@@ -10,6 +11,8 @@ import '../sass/index.scss'
 import * as instances from '../instances'
 
 Vue.use(TurbolinksAdapter)
+
+Turbolinks.start()
 
 document.addEventListener('turbolinks:load', () => {
   // Initialize available instances
