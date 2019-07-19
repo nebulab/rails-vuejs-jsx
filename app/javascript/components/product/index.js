@@ -1,9 +1,25 @@
+import ProductCard from './card'
+
 export default {
   name: 'ProductList',
 
+  props: {
+    products: Array
+  },
+
   render() {
     return(
-      <h1>Products catalog</h1>
+      <div>
+        <h1 class="my-4">
+          Products catalog
+        </h1>
+
+        <div class="row">
+          {this.products.map(product => (
+            <ProductCard product={product} />
+          ))}
+        </div>
+      </div>
     )
   }
 }

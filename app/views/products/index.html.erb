@@ -1,1 +1,3 @@
-<div class="vue-products"></div>
+<% props = { products: serialize('serializers/products', products: @products) }.to_json %>
+
+<div class="vue-products" data-props="<%= props %>"></div>
