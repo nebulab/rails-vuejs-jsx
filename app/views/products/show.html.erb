@@ -18,7 +18,14 @@
   </div>
 </div>
 
-<%= render 'shared/comments', comments: @product.comments, product: @product %>
+<%
+  props = {
+    comments: serialize('serializers/comments', comments: @product.comments),
+    product: serialize('serializers/product', product: @product)
+  }.to_json
+%>
+
+<div class="vue-comments" data-props="<%= props %>"></div>
 
 <div class="row my-2">
   <div class="col-md-8">

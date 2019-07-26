@@ -26,6 +26,7 @@ gem 'webpacker'
 # Utils
 gem 'seedbank'
 gem 'ffaker'
+gem 'i18n-js'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
