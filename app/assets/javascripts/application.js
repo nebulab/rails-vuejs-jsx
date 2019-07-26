@@ -13,4 +13,5 @@
 //= require rails-ujs
 //= require activestorage
 //= require i18n/translations
+//= require js-routes
 //= require_tree .
