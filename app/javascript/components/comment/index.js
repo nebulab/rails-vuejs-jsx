@@ -1,17 +1,31 @@
+import { mapState, mapActions } from 'vuex'
+
 import CommentCard from './card'
 
 export default {
   name: 'CommentList',
 
   props: {
-    comments: Array,
     product: Object
   },
 
+  computed: {
+    ...mapState({
+      comments: state => state.product.comments
+    })
+  },
+
   methods: {
+    ...mapActions({
+      fillComments: 'fillComments'
+    }),
     thereAreComments() {
       return this.comments.length > 0
     }
+  },
+
+  mounted() {
+    this.fillComments(this.product.comments)
   },
 
   render() {

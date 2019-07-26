@@ -20,7 +20,6 @@
 
 <%
   props = {
-    comments: serialize('serializers/comments', comments: @product.comments),
     product: serialize('serializers/product', product: @product)
   }.to_json
 %>

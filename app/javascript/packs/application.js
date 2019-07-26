@@ -4,6 +4,9 @@ import Turbolinks from 'turbolinks'
 import TurbolinksAdapter from 'vue-turbolinks'
 import Vue from 'vue'
 
+// Import the store
+import store from '../store'
+
 // Import style
 import '../sass/index.scss'
 
@@ -25,6 +28,7 @@ document.addEventListener('turbolinks:load', () => {
 
       new Vue({
         el: element,
+        store,
         render: h => h(instance.component, { props })
       })
     })
