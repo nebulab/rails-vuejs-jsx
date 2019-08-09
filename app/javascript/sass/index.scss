@@ -1,2 +1,8 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+.list-group-item {
+  background-color: transparent;
+  padding-left: 0;
+  padding-right: 0;
+}

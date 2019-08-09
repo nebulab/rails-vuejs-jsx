@@ -11,16 +11,6 @@
 
   <body>
     <div class="container">
-      <% if flash.key? :errors %>
-        <ul class="list-group my-4">
-          <% flash[:errors].each do |field, messages| %>
-            <% messages.each do |message| %>
-              <li class="list-group-item list-group-item-danger"><%= field %>: <%= message %></li>
-            <% end %>
-          <% end %>
-        </ul>
-      <% end %>
-
       <%= yield %>
     </div>
   </body>

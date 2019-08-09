@@ -1,7 +1,11 @@
 import api from '../../api'
+import { parseError } from '../../api/utils'
 
 const defaultState = {
-  comments: []
+  comments: [],
+  errors: {
+    comments: []
+  }
 }
 
 export const actions = {
@@ -9,9 +13,14 @@ export const actions = {
     commit('fillComments', comments)
   },
   addComment({ commit }, { productId, commentParams }) {
+    commit('commentRequestStart')
+
     api.comment.create(productId, commentParams)
       .then((comment) => {
         commit('commentAdded', comment)
+      })
+      .catch((error) => {
+        commit('commentRequestFailed', parseError(error))
       })
   },
   cancelComment({ commit }, commentId) {
@@ -31,6 +40,13 @@ export const mutations = {
   },
   commentCancelled(state, commentId) {
     state.comments = state.comments.filter(comment => commentId !== comment.id)
+  },
+
+  commentRequestStart(state) {
+    state.errors.comments = []
+  },
+  commentRequestFailed(state, errors) {
+    state.errors.comments = errors
   }
 }
 

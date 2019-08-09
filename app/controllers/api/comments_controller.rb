@@ -3,11 +3,11 @@ module Api
     def create
       comment = Comment.new(comment_params)
 
-      unless comment.save
+      if comment.save
+        render json: comment
+      else
         render json: { errors: comment.errors }, status: :unprocessable_entity
       end
-
-      render json: comment
     end
 
     def destroy

@@ -1,4 +1,6 @@
-import { mapActions } from 'vuex'
+import { mapState, mapActions } from 'vuex'
+
+import Alert from '../shared/alert'
 
 export default {
   props: {
@@ -10,6 +12,12 @@ export default {
       title: '',
       description: ''
     }
+  },
+
+  computed: {
+    ...mapState({
+      errors: state => state.product.errors.comments
+    })
   },
 
   methods: {
@@ -36,16 +44,18 @@ export default {
         <div class="col-md-8">
           <h4 class="my-4">Add new comment</h4>
 
+          <Alert errors={this.errors} type="danger" />
+
           <div class="form-label-group">
             <input type="input" class="form-control" name="title"
               placeholder={I18n.t('comments.form.title')}
-              required="true" autofocus="true" vModel_trim={this.title} />
+              autofocus="true" vModel_trim={this.title} />
           </div>
 
           <div class="form-label-group my-3">
             <input type="input" class="form-control" name="description"
               placeholder={I18n.t('comments.form.description')}
-              required="true" vModel_trim={this.description} />
+              vModel_trim={this.description} />
           </div>
 
           <input type="submit" class="btn btn-primary" value={I18n.t('comments.form.submit')}
