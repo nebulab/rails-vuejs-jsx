@@ -1,6 +1,14 @@
 import api from './instance'
 
 /**
+ * Create a comment
+ */
+const create = (productId, commentParams) => {
+  return api.post(Routes.api_product_comments_path(productId), commentParams)
+    .then(response => response.data)
+}
+
+/**
  * Destroy a comment
  */
 const destroy = (commentId) => {
@@ -9,5 +17,6 @@ const destroy = (commentId) => {
 }
 
 export default {
+  create,
   destroy
 }
